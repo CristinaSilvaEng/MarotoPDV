@@ -1,4 +1,4 @@
-﻿namespace MarotoPDV
+﻿namespace MarotoPDV.View
 {
     partial class Form1
     {
