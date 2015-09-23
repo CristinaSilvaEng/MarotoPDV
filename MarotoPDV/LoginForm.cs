@@ -17,5 +17,9 @@ namespace MarotoPDV
             InitializeComponent();
         }
 
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
