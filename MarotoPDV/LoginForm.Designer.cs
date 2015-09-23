@@ -37,6 +37,7 @@
             this.button_signup = new System.Windows.Forms.Button();
             this.groupBox_login = new System.Windows.Forms.GroupBox();
             this.button_cancel = new System.Windows.Forms.Button();
+            this.label_errorLogin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logoStore)).BeginInit();
             this.groupBox_login.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +87,7 @@
             // 
             // button_signup
             // 
-            this.button_signup.Location = new System.Drawing.Point(234, 117);
+            this.button_signup.Location = new System.Drawing.Point(234, 125);
             this.button_signup.Name = "button_signup";
             this.button_signup.Size = new System.Drawing.Size(75, 23);
             this.button_signup.TabIndex = 4;
@@ -109,7 +110,7 @@
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(324, 117);
+            this.button_cancel.Location = new System.Drawing.Point(324, 125);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 5;
@@ -117,11 +118,23 @@
             this.button_cancel.UseVisualStyleBackColor = true;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
+            // label_errorLogin
+            // 
+            this.label_errorLogin.AutoSize = true;
+            this.label_errorLogin.ForeColor = System.Drawing.Color.Red;
+            this.label_errorLogin.Location = new System.Drawing.Point(159, 107);
+            this.label_errorLogin.Name = "label_errorLogin";
+            this.label_errorLogin.Size = new System.Drawing.Size(144, 13);
+            this.label_errorLogin.TabIndex = 6;
+            this.label_errorLogin.Text = "Usuário ou Senha incorretos.";
+            this.label_errorLogin.Visible = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 156);
+            this.ClientSize = new System.Drawing.Size(420, 159);
+            this.Controls.Add(this.label_errorLogin);
             this.Controls.Add(this.button_signup);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.groupBox_login);
@@ -151,6 +164,7 @@
         private System.Windows.Forms.Label label_username;
         private System.Windows.Forms.GroupBox groupBox_login;
         private System.Windows.Forms.Button button_cancel;
+        private System.Windows.Forms.Label label_errorLogin;
     }
 }
 

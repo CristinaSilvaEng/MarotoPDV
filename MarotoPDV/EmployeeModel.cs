@@ -8,6 +8,16 @@ namespace MarotoPDV
 {
     class EmployeeModel
     {
+        public EmployeeModel(int id, string name, string passord, int level, string address, string telephone)
+        {
+            this.EmployeeID = id;
+            this.EmployeeName = name;
+            this.Password = passord;
+            this.Level = level;
+            this.Address = address;
+            this.Telephone = telephone;
+        }
+
         public int EmployeeID { get; set; }
         public string EmployeeName { get; set; }
         public string Password { get; set; }
