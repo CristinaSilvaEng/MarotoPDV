@@ -15,7 +15,7 @@ namespace MarotoPDV
 
         public int SaleID { get; set; }
         public EmployeeModel Employee { get; set; }
-        public double Total { get; set; }
+        public decimal Total { get; set; }
         public DateTime Timestamp { get; set; }
         public ICollection<ItemModel> Items { get; set; }
     }

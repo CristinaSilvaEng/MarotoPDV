@@ -11,6 +11,6 @@ namespace MarotoPDV
         public int ItemID { get; set; }
         public ProductModel Product { get; set; }
         public int Quantity { get; set; }
-        public double Parcial { get; set; }
+        public decimal Parcial { get; set; }
     }
 }
