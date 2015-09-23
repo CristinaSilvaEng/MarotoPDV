@@ -42,7 +42,10 @@ namespace MarotoPDV
                         //produto
                         break;
                     case 2:
-                        //operador
+                        this.Hide();
+                        EmployeeForm employeeForm = new EmployeeForm();
+                        employeeForm.Closed += (s, args) => this.Close();
+                        employeeForm.Show();
                         break;
                     default:
                         break;
