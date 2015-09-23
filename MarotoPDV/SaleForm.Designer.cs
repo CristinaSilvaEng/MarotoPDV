@@ -97,6 +97,7 @@
             this.button_logout.TabIndex = 3;
             this.button_logout.Text = "Logout";
             this.button_logout.UseVisualStyleBackColor = true;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
             // label_idOperator
             // 
@@ -194,6 +195,7 @@
             this.button_searchID.TabIndex = 6;
             this.button_searchID.Text = "Search";
             this.button_searchID.UseVisualStyleBackColor = true;
+            this.button_searchID.Click += new System.EventHandler(this.button_searchID_Click);
             // 
             // button_name
             // 
@@ -203,6 +205,7 @@
             this.button_name.TabIndex = 9;
             this.button_name.Text = "Search";
             this.button_name.UseVisualStyleBackColor = true;
+            this.button_name.Click += new System.EventHandler(this.button_name_Click);
             // 
             // textBox_name
             // 
@@ -228,6 +231,7 @@
             this.button_provider.TabIndex = 12;
             this.button_provider.Text = "Search";
             this.button_provider.UseVisualStyleBackColor = true;
+            this.button_provider.Click += new System.EventHandler(this.button_provider_Click);
             // 
             // textBox_provider
             // 
@@ -256,6 +260,7 @@
             // 
             // listView_products
             // 
+            this.listView_products.FullRowSelect = true;
             this.listView_products.Location = new System.Drawing.Point(6, 136);
             this.listView_products.Name = "listView_products";
             this.listView_products.Size = new System.Drawing.Size(263, 139);

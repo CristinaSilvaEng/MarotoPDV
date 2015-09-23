@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarotoPDV
 {
-    class EmployeeModel
+    public class EmployeeModel
     {
         public EmployeeModel(int id, string name, string passord, int level, string address, string telephone)
         {

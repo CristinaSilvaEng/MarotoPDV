@@ -36,7 +36,10 @@ namespace MarotoPDV
                 switch (employee.Level)
                 {
                     case 0:
-                        //venda
+                        this.Hide();
+                        SaleForm saleForm = new SaleForm(employee);
+                        saleForm.Closed += (s, args) => this.Close();
+                        saleForm.Show();
                         break;
                     case 1:
                         //produto
@@ -78,8 +81,6 @@ namespace MarotoPDV
                                             Int32.Parse(dataReader["LEVEL"].ToString()),
                                             dataReader[4].ToString(),
                                             dataReader[5].ToString());
-
-                        Console.WriteLine(employee.EmployeeName);
                     }
                     sqlConn.Close();
                 }
