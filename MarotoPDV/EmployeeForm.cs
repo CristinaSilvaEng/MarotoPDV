@@ -10,22 +10,26 @@ using System.Windows.Forms;
 
 namespace MarotoPDV
 {
-    public partial class LoginForm : Form
+    public partial class EmployeeForm : Form
     {
-        public LoginForm()
+        public EmployeeForm()
         {
             InitializeComponent();
         }
 
-        private void button_cancel_Click(object sender, EventArgs e)
+        private void button_create_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        private void button_signup_Click(object sender, EventArgs e)
+        private void button_update_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new EmployeeForm().ShowDialog();
+
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
