@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.groupBox_employee = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_address = new System.Windows.Forms.TextBox();
             this.maskedTextBox_telephone = new System.Windows.Forms.MaskedTextBox();
             this.comboBox_level = new System.Windows.Forms.ComboBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
@@ -41,7 +41,7 @@
             this.label_level = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
-            this.label_id = new System.Windows.Forms.Label();
+            this.pictureBox_logoStore = new System.Windows.Forms.PictureBox();
             this.button_create = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
@@ -49,14 +49,15 @@
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox_logoStore = new System.Windows.Forms.PictureBox();
+            this.textBox_id = new System.Windows.Forms.TextBox();
             this.groupBox_employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logoStore)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox_employee
             // 
-            this.groupBox_employee.Controls.Add(this.textBox1);
+            this.groupBox_employee.Controls.Add(this.textBox_id);
+            this.groupBox_employee.Controls.Add(this.textBox_address);
             this.groupBox_employee.Controls.Add(this.maskedTextBox_telephone);
             this.groupBox_employee.Controls.Add(this.comboBox_level);
             this.groupBox_employee.Controls.Add(this.textBox_password);
@@ -67,7 +68,6 @@
             this.groupBox_employee.Controls.Add(this.label_password);
             this.groupBox_employee.Controls.Add(this.label_name);
             this.groupBox_employee.Controls.Add(this.pictureBox_logoStore);
-            this.groupBox_employee.Controls.Add(this.label_id);
             this.groupBox_employee.Location = new System.Drawing.Point(12, 12);
             this.groupBox_employee.Name = "groupBox_employee";
             this.groupBox_employee.Size = new System.Drawing.Size(517, 221);
@@ -75,13 +75,13 @@
             this.groupBox_employee.TabStop = false;
             this.groupBox_employee.Text = "Employee";
             // 
-            // textBox1
+            // textBox_address
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 150);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(413, 60);
-            this.textBox1.TabIndex = 11;
+            this.textBox_address.Location = new System.Drawing.Point(9, 150);
+            this.textBox_address.Multiline = true;
+            this.textBox_address.Name = "textBox_address";
+            this.textBox_address.Size = new System.Drawing.Size(413, 60);
+            this.textBox_address.TabIndex = 11;
             // 
             // maskedTextBox_telephone
             // 
@@ -102,6 +102,7 @@
             // 
             this.textBox_password.Location = new System.Drawing.Point(68, 62);
             this.textBox_password.Name = "textBox_password";
+            this.textBox_password.PasswordChar = '*';
             this.textBox_password.Size = new System.Drawing.Size(354, 20);
             this.textBox_password.TabIndex = 8;
             // 
@@ -111,6 +112,7 @@
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(372, 20);
             this.textBox_name.TabIndex = 7;
+            this.textBox_name.TextChanged += new System.EventHandler(this.textBox_name_TextChanged);
             // 
             // label_telephone
             // 
@@ -157,15 +159,15 @@
             this.label_name.TabIndex = 2;
             this.label_name.Text = "Name:";
             // 
-            // label_id
+            // pictureBox_logoStore
             // 
-            this.label_id.AutoSize = true;
-            this.label_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_id.Location = new System.Drawing.Point(448, 70);
-            this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(54, 20);
-            this.label_id.TabIndex = 0;
-            this.label_id.Text = "#0001";
+            this.pictureBox_logoStore.Image = global::MarotoPDV.Properties.Resources.logo_store;
+            this.pictureBox_logoStore.Location = new System.Drawing.Point(452, 17);
+            this.pictureBox_logoStore.Name = "pictureBox_logoStore";
+            this.pictureBox_logoStore.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox_logoStore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_logoStore.TabIndex = 1;
+            this.pictureBox_logoStore.TabStop = false;
             // 
             // button_create
             // 
@@ -205,6 +207,7 @@
             this.button_search.TabIndex = 4;
             this.button_search.Text = "Search";
             this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // button_cancel
             // 
@@ -230,15 +233,14 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // pictureBox_logoStore
+            // textBox_id
             // 
-            this.pictureBox_logoStore.Image = global::MarotoPDV.Properties.Resources.logo_store;
-            this.pictureBox_logoStore.Location = new System.Drawing.Point(452, 17);
-            this.pictureBox_logoStore.Name = "pictureBox_logoStore";
-            this.pictureBox_logoStore.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox_logoStore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_logoStore.TabIndex = 1;
-            this.pictureBox_logoStore.TabStop = false;
+            this.textBox_id.Location = new System.Drawing.Point(452, 73);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(48, 20);
+            this.textBox_id.TabIndex = 12;
+            this.textBox_id.Text = "0000";
+            this.textBox_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // EmployeeForm
             // 
@@ -270,7 +272,6 @@
         private System.Windows.Forms.Button button_create;
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.Button button_delete;
-        private System.Windows.Forms.Label label_id;
         private System.Windows.Forms.Button button_search;
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button button_close;
@@ -280,11 +281,12 @@
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.PictureBox pictureBox_logoStore;
         private System.Windows.Forms.Label label_telephone;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_address;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_telephone;
         private System.Windows.Forms.ComboBox comboBox_level;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TextBox textBox_id;
     }
 }
