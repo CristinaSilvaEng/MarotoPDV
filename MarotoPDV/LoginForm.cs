@@ -42,7 +42,10 @@ namespace MarotoPDV
                         saleForm.Show();
                         break;
                     case 1:
-                        //produto
+                        this.Hide();
+                        ProductForm productForm = new ProductForm();
+                        productForm.Closed += (s, args) => this.Close();
+                        productForm.Show();
                         break;
                     case 2:
                         this.Hide();
@@ -61,7 +64,7 @@ namespace MarotoPDV
         {
             EmployeeModel employee = null;
             using (SqlConnection sqlConn =
-                    new SqlConnection("Data Source=DESKTOP-VT2TMR3;Initial Catalog=MAROTODB;Integrated Security=True"))
+                    new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\LUIZFELIPE\\DOCUMENTS\\GITHUBVISUALSTUDIO\\MAROTOPDV\\DATABASE FILES\\MAROTODB.MDF;Integrated Security=True;"))
             {
                 using (SqlCommand sqlCommand = new SqlCommand())
                 {
@@ -88,5 +91,9 @@ namespace MarotoPDV
             return employee;
         }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
