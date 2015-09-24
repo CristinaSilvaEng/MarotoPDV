@@ -42,12 +42,6 @@
             this.label_id = new System.Windows.Forms.Label();
             this.textBox_id = new System.Windows.Forms.TextBox();
             this.button_searchID = new System.Windows.Forms.Button();
-            this.button_name = new System.Windows.Forms.Button();
-            this.textBox_name = new System.Windows.Forms.TextBox();
-            this.label_name = new System.Windows.Forms.Label();
-            this.button_provider = new System.Windows.Forms.Button();
-            this.textBox_provider = new System.Windows.Forms.TextBox();
-            this.label_provider = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
             this.listView_products = new System.Windows.Forms.ListView();
             this.button_clean = new System.Windows.Forms.Button();
@@ -155,12 +149,6 @@
             this.groupBox_search.Controls.Add(this.button_cart);
             this.groupBox_search.Controls.Add(this.button_clean);
             this.groupBox_search.Controls.Add(this.listView_products);
-            this.groupBox_search.Controls.Add(this.button_provider);
-            this.groupBox_search.Controls.Add(this.textBox_provider);
-            this.groupBox_search.Controls.Add(this.label_provider);
-            this.groupBox_search.Controls.Add(this.button_name);
-            this.groupBox_search.Controls.Add(this.textBox_name);
-            this.groupBox_search.Controls.Add(this.label_name);
             this.groupBox_search.Controls.Add(this.button_searchID);
             this.groupBox_search.Controls.Add(this.textBox_id);
             this.groupBox_search.Controls.Add(this.label_id);
@@ -197,58 +185,6 @@
             this.button_searchID.UseVisualStyleBackColor = true;
             this.button_searchID.Click += new System.EventHandler(this.button_searchID_Click);
             // 
-            // button_name
-            // 
-            this.button_name.Location = new System.Drawing.Point(194, 57);
-            this.button_name.Name = "button_name";
-            this.button_name.Size = new System.Drawing.Size(75, 23);
-            this.button_name.TabIndex = 9;
-            this.button_name.Text = "Search";
-            this.button_name.UseVisualStyleBackColor = true;
-            this.button_name.Click += new System.EventHandler(this.button_name_Click);
-            // 
-            // textBox_name
-            // 
-            this.textBox_name.Location = new System.Drawing.Point(58, 60);
-            this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(130, 20);
-            this.textBox_name.TabIndex = 8;
-            // 
-            // label_name
-            // 
-            this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(6, 63);
-            this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(38, 13);
-            this.label_name.TabIndex = 7;
-            this.label_name.Text = "Name:";
-            // 
-            // button_provider
-            // 
-            this.button_provider.Location = new System.Drawing.Point(194, 96);
-            this.button_provider.Name = "button_provider";
-            this.button_provider.Size = new System.Drawing.Size(75, 23);
-            this.button_provider.TabIndex = 12;
-            this.button_provider.Text = "Search";
-            this.button_provider.UseVisualStyleBackColor = true;
-            this.button_provider.Click += new System.EventHandler(this.button_provider_Click);
-            // 
-            // textBox_provider
-            // 
-            this.textBox_provider.Location = new System.Drawing.Point(58, 99);
-            this.textBox_provider.Name = "textBox_provider";
-            this.textBox_provider.Size = new System.Drawing.Size(130, 20);
-            this.textBox_provider.TabIndex = 11;
-            // 
-            // label_provider
-            // 
-            this.label_provider.AutoSize = true;
-            this.label_provider.Location = new System.Drawing.Point(6, 102);
-            this.label_provider.Name = "label_provider";
-            this.label_provider.Size = new System.Drawing.Size(49, 13);
-            this.label_provider.TabIndex = 10;
-            this.label_provider.Text = "Provider:";
-            // 
             // button_cancel
             // 
             this.button_cancel.Location = new System.Drawing.Point(149, 440);
@@ -261,9 +197,9 @@
             // listView_products
             // 
             this.listView_products.FullRowSelect = true;
-            this.listView_products.Location = new System.Drawing.Point(6, 136);
+            this.listView_products.Location = new System.Drawing.Point(6, 51);
             this.listView_products.Name = "listView_products";
-            this.listView_products.Size = new System.Drawing.Size(263, 139);
+            this.listView_products.Size = new System.Drawing.Size(263, 224);
             this.listView_products.TabIndex = 16;
             this.listView_products.UseCompatibleStateImageBehavior = false;
             // 
@@ -333,12 +269,6 @@
 
         private System.Windows.Forms.GroupBox groupBox_sale;
         private System.Windows.Forms.GroupBox groupBox_search;
-        private System.Windows.Forms.Button button_provider;
-        private System.Windows.Forms.TextBox textBox_provider;
-        private System.Windows.Forms.Label label_provider;
-        private System.Windows.Forms.Button button_name;
-        private System.Windows.Forms.TextBox textBox_name;
-        private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Button button_searchID;
         private System.Windows.Forms.TextBox textBox_id;
         private System.Windows.Forms.Label label_id;
