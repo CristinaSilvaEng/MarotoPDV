@@ -61,7 +61,7 @@ namespace MarotoPDV
         {
             EmployeeModel employee = null;
             using (SqlConnection sqlConn =
-                    new SqlConnection("Data Source=DESKTOP-VT2TMR3;Initial Catalog=MAROTODB;Integrated Security=True"))
+            new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MarotoDB.mdf;Integrated Security=True;"))
             {
                 using (SqlCommand sqlCommand = new SqlCommand())
                 {
