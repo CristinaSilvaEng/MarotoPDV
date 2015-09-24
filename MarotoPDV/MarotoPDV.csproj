@@ -75,6 +75,9 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MarotoDBDataSet.cs">
+      <DependentUpon>MarotoDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MarotoDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
