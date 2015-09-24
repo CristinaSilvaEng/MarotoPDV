@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.groupBox_employee = new System.Windows.Forms.GroupBox();
+            this.textBox_id = new System.Windows.Forms.TextBox();
             this.textBox_address = new System.Windows.Forms.TextBox();
             this.maskedTextBox_telephone = new System.Windows.Forms.MaskedTextBox();
             this.comboBox_level = new System.Windows.Forms.ComboBox();
@@ -49,7 +50,6 @@
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.textBox_id = new System.Windows.Forms.TextBox();
             this.groupBox_employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logoStore)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +74,15 @@
             this.groupBox_employee.TabIndex = 0;
             this.groupBox_employee.TabStop = false;
             this.groupBox_employee.Text = "Employee";
+            // 
+            // textBox_id
+            // 
+            this.textBox_id.Location = new System.Drawing.Point(452, 73);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(48, 20);
+            this.textBox_id.TabIndex = 12;
+            this.textBox_id.Text = "0000";
+            this.textBox_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_address
             // 
@@ -233,15 +242,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // textBox_id
-            // 
-            this.textBox_id.Location = new System.Drawing.Point(452, 73);
-            this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(48, 20);
-            this.textBox_id.TabIndex = 12;
-            this.textBox_id.Text = "0000";
-            this.textBox_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +258,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EmployeeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarotoPDV";
             this.groupBox_employee.ResumeLayout(false);
             this.groupBox_employee.PerformLayout();
