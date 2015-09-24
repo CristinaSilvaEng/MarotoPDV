@@ -146,7 +146,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarotoPDV";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logoStore)).EndInit();
             this.groupBox_login.ResumeLayout(false);
             this.groupBox_login.PerformLayout();

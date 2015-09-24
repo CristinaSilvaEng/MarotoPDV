@@ -13,7 +13,7 @@ namespace MarotoPDV
 {
     public partial class EmployeeForm : Form
     {
-        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\LUIZFELIPE\\DOCUMENTS\\GITHUBVISUALSTUDIO\\MAROTOPDV\\DATABASE FILES\\MAROTODB.MDF;Integrated Security=True;";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MarotoDB.mdf;Integrated Security=True;";
 
         public EmployeeForm()
         {
