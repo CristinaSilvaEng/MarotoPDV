@@ -42,7 +42,10 @@ namespace MarotoPDV
                         saleForm.Show();
                         break;
                     case 1:
-                        //produto
+                        this.Hide();
+                        ProductForm productForm = new ProductForm();
+                        productForm.Closed += (s, args) => this.Close();
+                        productForm.Show();
                         break;
                     case 2:
                         this.Hide();
@@ -88,5 +91,9 @@ namespace MarotoPDV
             return employee;
         }
 
+        private void groupBox_login_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

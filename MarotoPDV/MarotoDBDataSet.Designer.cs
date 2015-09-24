@@ -1028,6 +1028,8 @@ namespace MarotoPDV {
             
             private global::System.Data.DataColumn columnSALE_PRICE;
             
+            private global::System.Data.DataColumn columnDESCRIPTION;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PRODUCTDataTable() {
@@ -1119,6 +1121,14 @@ namespace MarotoPDV {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DESCRIPTIONColumn {
+                get {
+                    return this.columnDESCRIPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1154,16 +1164,17 @@ namespace MarotoPDV {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PRODUCTRow AddPRODUCTRow(int ID, string NAME, string PROVIDER, System.DateTime EXPIRATION_DATE, int QUANTITY, decimal PURCHASE_PRICE, decimal SALE_PRICE) {
+            public PRODUCTRow AddPRODUCTRow(string NAME, string PROVIDER, System.DateTime EXPIRATION_DATE, int QUANTITY, decimal PURCHASE_PRICE, decimal SALE_PRICE, string DESCRIPTION) {
                 PRODUCTRow rowPRODUCTRow = ((PRODUCTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         NAME,
                         PROVIDER,
                         EXPIRATION_DATE,
                         QUANTITY,
                         PURCHASE_PRICE,
-                        SALE_PRICE};
+                        SALE_PRICE,
+                        DESCRIPTION};
                 rowPRODUCTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPRODUCTRow);
                 return rowPRODUCTRow;
@@ -1200,6 +1211,7 @@ namespace MarotoPDV {
                 this.columnQUANTITY = base.Columns["QUANTITY"];
                 this.columnPURCHASE_PRICE = base.Columns["PURCHASE_PRICE"];
                 this.columnSALE_PRICE = base.Columns["SALE_PRICE"];
+                this.columnDESCRIPTION = base.Columns["DESCRIPTION"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1219,8 +1231,13 @@ namespace MarotoPDV {
                 base.Columns.Add(this.columnPURCHASE_PRICE);
                 this.columnSALE_PRICE = new global::System.Data.DataColumn("SALE_PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSALE_PRICE);
+                this.columnDESCRIPTION = new global::System.Data.DataColumn("DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESCRIPTION);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnNAME.AllowDBNull = false;
@@ -1889,6 +1906,34 @@ namespace MarotoPDV {
                 set {
                     this[this.tablePRODUCT.SALE_PRICEColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DESCRIPTION {
+                get {
+                    try {
+                        return ((string)(this[this.tablePRODUCT.DESCRIPTIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DESCRIPTION\' in table \'PRODUCT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePRODUCT.DESCRIPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDESCRIPTIONNull() {
+                return this.IsNull(this.tablePRODUCT.DESCRIPTIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDESCRIPTIONNull() {
+                this[this.tablePRODUCT.DESCRIPTIONColumn] = global::System.Convert.DBNull;
             }
         }
         

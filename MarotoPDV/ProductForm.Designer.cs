@@ -38,7 +38,6 @@
             this.textBox_preco_compra = new System.Windows.Forms.TextBox();
             this.textBox_fornecedor = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
-            this.label_id = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,12 +54,14 @@
             this.button_update = new System.Windows.Forms.Button();
             this.button_create = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.textBox_id = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox_id);
             this.groupBox1.Controls.Add(this.textBox_descricao);
             this.groupBox1.Controls.Add(this.textBox_qtd_estoque);
             this.groupBox1.Controls.Add(this.dateTimePicker_data_validade);
@@ -68,7 +69,6 @@
             this.groupBox1.Controls.Add(this.textBox_preco_compra);
             this.groupBox1.Controls.Add(this.textBox_fornecedor);
             this.groupBox1.Controls.Add(this.textBox_name);
-            this.groupBox1.Controls.Add(this.label_id);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -136,16 +136,6 @@
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(381, 20);
             this.textBox_name.TabIndex = 10;
-            // 
-            // label_id
-            // 
-            this.label_id.AutoSize = true;
-            this.label_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_id.Location = new System.Drawing.Point(447, 69);
-            this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(54, 20);
-            this.label_id.TabIndex = 9;
-            this.label_id.Text = "#0001";
             // 
             // pictureBox1
             // 
@@ -257,6 +247,7 @@
             this.button_search.TabIndex = 10;
             this.button_search.Text = "Search";
             this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // button_delete
             // 
@@ -266,6 +257,7 @@
             this.button_delete.TabIndex = 9;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_update
             // 
@@ -275,6 +267,7 @@
             this.button_update.TabIndex = 8;
             this.button_update.Text = "Update";
             this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // button_create
             // 
@@ -284,12 +277,22 @@
             this.button_create.TabIndex = 7;
             this.button_create.Text = "Create";
             this.button_create.UseVisualStyleBackColor = true;
+            this.button_create.Click += new System.EventHandler(this.button_create_Click);
             // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "logo_store.png");
+            // 
+            // textBox_id
+            // 
+            this.textBox_id.Location = new System.Drawing.Point(285, 194);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(48, 20);
+            this.textBox_id.TabIndex = 19;
+            this.textBox_id.Text = "0000";
+            this.textBox_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ProductForm
             // 
@@ -331,7 +334,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label_id;
         private System.Windows.Forms.TextBox textBox_preco_compra;
         private System.Windows.Forms.TextBox textBox_fornecedor;
         private System.Windows.Forms.TextBox textBox_name;
@@ -339,5 +341,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_data_validade;
         private System.Windows.Forms.TextBox textBox_preco_venda;
         private System.Windows.Forms.TextBox textBox_descricao;
+        private System.Windows.Forms.TextBox textBox_id;
     }
 }

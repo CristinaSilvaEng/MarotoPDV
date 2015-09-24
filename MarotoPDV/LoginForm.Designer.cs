@@ -107,6 +107,7 @@
             this.groupBox_login.TabIndex = 1;
             this.groupBox_login.TabStop = false;
             this.groupBox_login.Text = "Login";
+            this.groupBox_login.Enter += new System.EventHandler(this.groupBox_login_Enter);
             // 
             // button_cancel
             // 

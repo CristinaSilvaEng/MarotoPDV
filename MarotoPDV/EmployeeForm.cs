@@ -131,7 +131,7 @@ namespace MarotoPDV
                     }
                     else
                     {
-                        //colocar mensagem de erro, ou não
+                        MessageBox.Show("Empty result");
                     }
                 }
             }
