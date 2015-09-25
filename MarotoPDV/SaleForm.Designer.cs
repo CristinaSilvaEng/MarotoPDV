@@ -48,12 +48,10 @@
             this.label_idOperator = new System.Windows.Forms.Label();
             this.label_operator = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
-            this.marotoDBDataSet = new MarotoPDV.MarotoDBDataSet();
             this.groupBox_sale.SuspendLayout();
             this.groupBox_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_quantity)).BeginInit();
             this.groupBox_total.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marotoDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox_sale
@@ -180,9 +178,9 @@
             this.label_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_value.Location = new System.Drawing.Point(191, 25);
             this.label_value.Name = "label_value";
-            this.label_value.Size = new System.Drawing.Size(78, 26);
+            this.label_value.Size = new System.Drawing.Size(54, 26);
             this.label_value.TabIndex = 1;
-            this.label_value.Text = "297,00";
+            this.label_value.Text = "0,00";
             // 
             // label_currency
             // 
@@ -202,6 +200,7 @@
             this.button_generate.TabIndex = 1;
             this.button_generate.Text = "Generate Sale";
             this.button_generate.UseVisualStyleBackColor = true;
+            this.button_generate.Click += new System.EventHandler(this.button_generate_Click);
             // 
             // button_logout
             // 
@@ -239,11 +238,7 @@
             this.button_cancel.TabIndex = 6;
             this.button_cancel.Text = "Cancel Sale";
             this.button_cancel.UseVisualStyleBackColor = true;
-            // 
-            // marotoDBDataSet
-            // 
-            this.marotoDBDataSet.DataSetName = "MarotoDBDataSet";
-            this.marotoDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
             // SaleForm
             // 
@@ -268,7 +263,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_quantity)).EndInit();
             this.groupBox_total.ResumeLayout(false);
             this.groupBox_total.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marotoDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,6 +289,5 @@
         private System.Windows.Forms.Button button_clean;
         private System.Windows.Forms.ListBox listBox_products;
         private System.Windows.Forms.ListBox listBox_saleItems;
-        private MarotoDBDataSet marotoDBDataSet;
     }
 }
