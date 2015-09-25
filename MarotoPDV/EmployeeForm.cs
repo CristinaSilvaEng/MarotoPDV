@@ -43,6 +43,8 @@ namespace MarotoPDV
 
                     sqlConn.Close();
                 }
+                MessageBox.Show("Create with success.");
+                clean_form();
             }
         }
 
@@ -69,6 +71,8 @@ namespace MarotoPDV
 
                     sqlConn.Close();
                 }
+                MessageBox.Show("Update with success.");
+                clean_form();
             }
         }
 
@@ -89,6 +93,8 @@ namespace MarotoPDV
 
                     sqlConn.Close();
                 }
+                MessageBox.Show("Delete with success.");
+                clean_form();
             }
         }
 
@@ -132,9 +138,20 @@ namespace MarotoPDV
                     else
                     {
                         MessageBox.Show("Empty result");
+                        clean_form();
                     }
                 }
             }
+        }
+
+        private void clean_form()
+        {
+            textBox_id.ResetText();
+            textBox_name.ResetText();
+            textBox_password.ResetText();
+            comboBox_level.ResetText();
+            textBox_address.ResetText();
+            maskedTextBox_telephone.ResetText();
         }
 
         private void textBox_name_TextChanged(object sender, EventArgs e)

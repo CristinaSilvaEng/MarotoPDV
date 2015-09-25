@@ -55,6 +55,8 @@ namespace MarotoPDV
 
                     sqlConn.Close();
                 }
+                MessageBox.Show("Create with success.");
+                clean_form();
             }
         }
 
@@ -102,6 +104,7 @@ namespace MarotoPDV
                     else
                     {
                         MessageBox.Show("Empty result");
+                        clean_form();
                     }
                 }
             }
@@ -133,6 +136,8 @@ namespace MarotoPDV
 
                     sqlConn.Close();
                 }
+                MessageBox.Show("Update with success.");
+                clean_form();
             }
         }
 
@@ -153,7 +158,21 @@ namespace MarotoPDV
 
                     sqlConn.Close();
                 }
+                MessageBox.Show("Delete with success.");
+                clean_form();
             }
+        }
+
+        private void clean_form()
+        {
+            textBox_id.ResetText();
+            textBox_name.ResetText();
+            textBox_fornecedor.ResetText();
+            dateTimePicker_data_validade.ResetText();
+            textBox_qtd_estoque.ResetText();
+            textBox_preco_compra.ResetText();
+            textBox_preco_venda.ResetText();
+            textBox_descricao.ResetText();
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -162,6 +181,11 @@ namespace MarotoPDV
             LoginForm loginForm = new LoginForm();
             loginForm.Closed += (s, args) => this.Close();
             loginForm.Show();
+        }
+
+        private void ProductForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
