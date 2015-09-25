@@ -73,6 +73,7 @@
             this.listBox_saleItems.Name = "listBox_saleItems";
             this.listBox_saleItems.Size = new System.Drawing.Size(320, 381);
             this.listBox_saleItems.TabIndex = 3;
+            this.listBox_saleItems.SelectedIndexChanged += new System.EventHandler(this.listBox_saleItems_SelectedIndexChanged);
             // 
             // groupBox_search
             // 

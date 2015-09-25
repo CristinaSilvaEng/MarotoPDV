@@ -163,44 +163,49 @@ namespace MarotoPDV
 
         private void button_generate_Click(object sender, EventArgs e)
         {
+            using (SqlConnection sqlConn =
+                     new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MarotoDB.mdf;Integrated Security=True;"))
+            {
+                using (SqlCommand sqlCommand = new SqlCommand())
+                {
+                    sqlCommand.CommandText = "INSERT INTO SALE VALUES (@id, @employee, @total, @time)";
+
+                    sqlCommand.Parameters.AddWithValue("id", 10);
+                    sqlCommand.Parameters.AddWithValue("employee", employee.EmployeeID);
+                    sqlCommand.Parameters.AddWithValue("total", Decimal.Parse(label_value.Text));
+                    sqlCommand.Parameters.AddWithValue("time", DateTime.Now);
+
+                    sqlCommand.Connection = sqlConn;
+                    sqlConn.Open();
+
+                    sqlCommand.ExecuteNonQuery();
+
+                    foreach (ItemModel item in saleItems)
+                    {
+                        int i = 10;
+                        sqlCommand.CommandText = "INSERT INTO ITEM VALUES (@id_item, @product, @sale, @quantity)";
+
+                        sqlCommand.Parameters.AddWithValue("id_item", i++);
+                        sqlCommand.Parameters.AddWithValue("product", item.Product.ProductID);
+                        sqlCommand.Parameters.AddWithValue("sale", 10);
+                        sqlCommand.Parameters.AddWithValue("quantity", item.Quantity);
+
+                        sqlCommand.ExecuteNonQuery();
+                    }
+
+                    sqlConn.Close();
+                }
+            }
+
             MessageBox.Show("Sale finished with success.", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
             label_value.Text = "0,00";
             listBox_saleItems.Items.Clear();
             saleItems.Clear();
+        }
 
-            /**   using (SqlConnection sqlConn =
-                     new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MarotoDB.mdf;Integrated Security=True;"))
-               {
-                   using (SqlCommand sqlCommand = new SqlCommand())
-                   {
-                       sqlCommand.CommandText = "INSERT INTO SALE VALUES (@id, @employee, @total, @time)";
+        private void listBox_saleItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-                       sqlCommand.Parameters.AddWithValue("id", 10);
-                       sqlCommand.Parameters.AddWithValue("employee", employee.EmployeeID);
-                       sqlCommand.Parameters.AddWithValue("total", Decimal.Parse(label_value.Text));
-                       sqlCommand.Parameters.AddWithValue("time", DateTime.Now);
-
-                       sqlCommand.Connection = sqlConn;
-                       sqlConn.Open();
-
-                       sqlCommand.ExecuteNonQuery();
-
-                       foreach (ItemModel item in saleItems)
-                       {
-                           int i = 10;
-                           sqlCommand.CommandText = "INSERT INTO ITEM VALUES (@id, @product, @sale, @quantity)";
-
-                           sqlCommand.Parameters.AddWithValue("id", i++);
-                           sqlCommand.Parameters.AddWithValue("product", item.Product.ProductID);
-                           sqlCommand.Parameters.AddWithValue("sale", 10);
-                           sqlCommand.Parameters.AddWithValue("quantity", item.Quantity);
-
-                           //sqlCommand.ExecuteNonQuery();
-                       }
-
-                       sqlConn.Close();
-                   }
-               }**/
         }
     }
 }
