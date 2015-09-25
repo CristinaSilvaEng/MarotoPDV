@@ -23,8 +23,15 @@ namespace MarotoPDV
 
         public override bool Equals(object obj)
         {
-            ItemModel other = (ItemModel) obj;
+            ItemModel other = (ItemModel)obj;
             return other.Product.ProductID == this.Product.ProductID;
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        
     }
 }
