@@ -164,6 +164,10 @@ namespace MarotoPDV
         private void button_generate_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Sale finished with success.", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            label_value.Text = "0,00";
+            listBox_saleItems.Items.Clear();
+            saleItems.Clear();
+
             /**   using (SqlConnection sqlConn =
                      new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MarotoDB.mdf;Integrated Security=True;"))
                {

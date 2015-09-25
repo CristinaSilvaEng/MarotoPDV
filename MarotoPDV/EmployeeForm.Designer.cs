@@ -235,6 +235,7 @@
             this.button_close.TabIndex = 6;
             this.button_close.Text = "Close";
             this.button_close.UseVisualStyleBackColor = true;
+            this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
             // imageList1
             // 

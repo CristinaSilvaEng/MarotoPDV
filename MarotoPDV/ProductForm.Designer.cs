@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_id = new System.Windows.Forms.TextBox();
             this.textBox_descricao = new System.Windows.Forms.TextBox();
             this.textBox_qtd_estoque = new System.Windows.Forms.TextBox();
             this.dateTimePicker_data_validade = new System.Windows.Forms.DateTimePicker();
@@ -54,7 +55,6 @@
             this.button_update = new System.Windows.Forms.Button();
             this.button_create = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.textBox_id = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // textBox_id
+            // 
+            this.textBox_id.Location = new System.Drawing.Point(285, 194);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(48, 20);
+            this.textBox_id.TabIndex = 19;
+            this.textBox_id.Text = "0000";
+            this.textBox_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_descricao
             // 
@@ -229,6 +238,7 @@
             this.button_close.TabIndex = 12;
             this.button_close.Text = "Close";
             this.button_close.UseVisualStyleBackColor = true;
+            this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
             // button_cancel
             // 
@@ -285,15 +295,6 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "logo_store.png");
             // 
-            // textBox_id
-            // 
-            this.textBox_id.Location = new System.Drawing.Point(285, 194);
-            this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(48, 20);
-            this.textBox_id.TabIndex = 19;
-            this.textBox_id.Text = "0000";
-            this.textBox_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +308,7 @@
             this.Controls.Add(this.button_create);
             this.Controls.Add(this.groupBox1);
             this.Name = "ProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarotoPDV";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
